@@ -1,0 +1,182 @@
+@media (max-width: 900px) {
+  .hero__copy { width: 34vw; }
+  .hero__phones { right: 0; width: 66vw; }
+  .hero__phone .phone { width: clamp(8.75rem, 17vw, 10.5rem); }
+  .hero__phone--1 { left: 5%; }
+  .hero__product { left: 54%; width: 42vw; }
+  .hero__product--1 { left: var(--gutter); width: 42%; }
+}
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .hero__phone .phone { width: clamp(10rem, 17vw, 11.5rem); }
+}
+
+@media (max-width: 768px) {
+  .site-header { position: absolute; padding-top: 1rem; }
+  .site-header nav { gap: 1rem; }
+  .site-header nav a:nth-child(2) { display: none; }
+  .hero { min-height: 620svh; }
+  .hero__products-anchor { top: 200svh; }
+  .hero__stage { align-content: start; padding-top: 9rem; }
+  .hero__stage::before { display: none; }
+  .hero__copy { width: auto; padding: 0 var(--gutter); }
+  .hero__copy h1 { font-size: clamp(3.7rem, 18vw, 6rem); }
+  .hero__copy > p:last-child { margin-top: 1.2rem; }
+  .hero__phones { top: auto; right: auto; bottom: 4.5rem; left: 50%; width: min(42rem, 96vw); height: 43vh; transform: translateX(-50%); perspective: 900px; }
+  .hero__phone { top: 7%; }
+  .hero__phone .phone { width: clamp(6.7rem, 25vw, 9.6rem); border-radius: 1.55rem; padding: .35rem; }
+  .hero__phone .phone__screen { border-radius: 1.25rem; }
+  .hero__phone .phone__speaker { top: .4rem; height: .65rem; }
+  .hero__phone .phone--nirvaan .app-logo__tagline { font-size: clamp(.34rem, 1.45vw, .42rem); letter-spacing: .015em; }
+  .hero__phone--1 { left: 2.5%; transform: translate3d(0, 10%, 20px) rotateY(10deg) rotateZ(-3deg); }
+  .hero__phone--2 { left: 35%; transform: translate3d(0, 0, 50px) rotateZ(1deg); }
+  .hero__phone--3 { left: 69%; transform: translate3d(0, 10%, 20px) rotateY(-10deg) rotateZ(3deg); }
+  .hero__story { display: block; }
+  .hero__story-divider { top: 6%; bottom: 6%; left: 37%; }
+  .hero__story-phone { top: 52%; left: 5.5%; }
+  .hero__story-phone .story-phone { width: clamp(6.9rem, 28vw, 9rem); border-radius: 1.65rem; padding: .38rem; }
+  .hero__story-phone .phone__screen { border-radius: 1.35rem; }
+  .hero__story-phone .phone__speaker { top: .42rem; height: .7rem; }
+  .hero__product { display: block; top: 50%; left: 40%; width: 56%; }
+  .hero__product--1 { left: 4%; width: 56%; }
+  .hero__product .product-copy { max-width: none; }
+  .hero__product .product-copy__index { margin-bottom: .55rem; font-size: .5rem; }
+  .hero__product .launch-store { margin-bottom: .72rem; }
+  .hero__product .launch-store__veil { min-height: 1.85rem; margin-bottom: .35rem; padding: .24rem .45rem; }
+  .hero__product .launch-store__veil span { font-size: .46rem; letter-spacing: .08em; }
+  .hero__product .launch-store__veil strong { font-size: .76rem; }
+  .hero__product .store-badge { height: 2.35rem; gap: .3rem; padding: .28rem .34rem; font-size: .57rem; }
+  .hero__product .store-badge small { font-size: .35rem; }
+  .hero__product .store-badge__icon { width: .9rem; height: 1rem; }
+  .hero__product .store-badge__icon--play { width: .82rem; height: .82rem; }
+  .hero__product .product-copy__brand { margin-bottom: .42rem; }
+  .hero__product .product-copy__brand--lucida .product-copy__logo { width: min(8.8rem, 100%); }
+  .hero__product .product-copy__brand--hera .product-copy__logo { width: min(6.8rem, 78%); height: auto; aspect-ratio: 1.31; }
+  .hero__product .product-copy__brand--nirvaan .product-copy__logo { width: min(9rem, 100%); }
+  .hero__product .product-copy__brand--nirvaan .app-logo__tagline { font-size: .52rem; }
+  .hero__product .product-copy__positioning { margin-top: .48rem; font-size: clamp(.92rem, 4vw, 1.08rem); }
+  .hero__product .product-copy__description { margin-top: .48rem; font-size: clamp(.64rem, 2.8vw, .73rem); line-height: 1.34; }
+  .hero__product .product-copy__proof { gap: .22rem; margin-top: .52rem; padding-top: .48rem; font-size: clamp(.56rem, 2.4vw, .64rem); line-height: 1.3; }
+  .hero__product .product-copy__proof li { padding-left: .7rem; }
+  .hero__product .product-copy__proof li::before { width: .25rem; }
+  .scroll-cue { bottom: 1.3rem; }
+  .mobile-product { display: grid; grid-template-columns: minmax(8rem, .7fr) 1.3fr; align-items: center; gap: clamp(1.5rem, 8vw, 4rem); min-height: 85svh; padding: 4rem 0; border-bottom: 1px solid rgba(14,23,38,.15); }
+  .mobile-product:nth-child(even) .phone { order: 2; }
+  .mobile-product .phone { width: min(100%, 12rem); border-radius: 1.8rem; }
+  .mobile-product .phone__screen { border-radius: 1.45rem; }
+  .product-copy__index { margin-bottom: 1.2rem; }
+  .product-copy__brand { margin-bottom: .8rem; }
+  .product-copy__positioning { margin-top: 1rem; }
+  .product-copy__description { font-size: .8rem; }
+  .convergence { padding-left: var(--gutter); padding-right: var(--gutter); }
+  .convergence h2 { margin-bottom: 1.5rem; }
+  .convergence__intro { margin-bottom: 3rem; }
+  .convergence__logos { grid-template-columns: 1fr; max-width: 26rem; }
+  .convergence figure { display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 1rem; text-align: left; }
+  .convergence figure > span { height: 8rem; }
+  .convergence figcaption { margin: 0; }
+  .architecture-flow { grid-template-columns: 1fr; margin-top: 2.5rem; }
+  .architecture-flow li { grid-template-rows: auto; min-height: 0; }
+  .architecture-flow li, .architecture-flow li:first-child { border-right: 0; border-left: 0; border-bottom: 1px solid var(--color-border); }
+  .architecture-flow strong { margin-top: 1.5rem; }
+  .architecture-flow p { margin-top: .8rem; padding-top: 0; }
+  .about { grid-template-columns: 1fr; }
+  .about__mark { min-height: 65svh; }
+  .about__content { padding-top: 5rem; padding-bottom: 6rem; }
+  .footer { min-height: 70svh; }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .hero__phones { bottom: 2.5rem; }
+  .hero__story-phone { left: 7%; }
+  .hero__story-phone .story-phone { width: 11rem; }
+  .hero__product { left: 40%; width: 54%; }
+  .hero__product--1 { left: 6%; width: 54%; }
+  .hero__product .product-copy__index { font-size: .56rem; }
+  .hero__product .store-badge { height: 2.65rem; font-size: .66rem; }
+  .hero__product .product-copy__brand--lucida .product-copy__logo { width: 10rem; }
+  .hero__product .product-copy__brand--hera .product-copy__logo { width: 7.8rem; }
+  .hero__product .product-copy__brand--nirvaan .product-copy__logo { width: 10.5rem; }
+  .hero__product .product-copy__positioning { font-size: 1.15rem; }
+  .hero__product .product-copy__description { font-size: .78rem; }
+  .hero__product .product-copy__proof { font-size: .68rem; }
+}
+
+@media (max-width: 480px) {
+  .brand-link { height: 2.65rem; }
+  .hero__phones { bottom: 1.6rem; }
+  .hero__phone .phone { width: clamp(6.2rem, 26vw, 7.4rem); }
+  .mobile-product { grid-template-columns: 1fr; min-height: 0; padding: 5rem 0; }
+  .mobile-product:nth-child(even) .phone { order: initial; }
+  .mobile-product .phone { width: 11rem; margin: 0 auto 1rem; }
+  .product-copy { max-width: 22rem; }
+  .launch-store { width: 100%; }
+  .launch-store__badges { gap: .3rem; }
+  .store-badge { height: 2.8rem; padding: .35rem .4rem; font-size: .67rem; }
+  .launch-store__veil { padding: .35rem .55rem; }
+  .launch-store__veil strong { font-size: .88rem; }
+  .about dl div { grid-template-columns: 1fr; gap: .5rem; }
+  .footer__bottom { gap: 2rem; }
+}
+
+@media (max-width: 360px) {
+  .brand-link { height: 2.25rem; }
+  .site-header nav { gap: .85rem; font-size: .68rem; }
+  .hero__phones { bottom: -.25rem; }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+  .site-header { padding-top: .65rem; padding-bottom: .65rem; }
+  .brand-link { height: 2.45rem; }
+  .hero { min-height: 620svh; }
+  .hero__products-anchor { top: 200svh; }
+  .hero__stage { align-items: center; padding-top: 0; }
+  .hero__copy { width: 33vw; padding-left: var(--gutter); }
+  .hero__copy .eyebrow { margin-bottom: .75rem; }
+  .hero__copy h1 { font-size: clamp(2.75rem, 6vw, 4rem); }
+  .hero__copy > p:last-child { margin-top: .75rem; font-size: .72rem; line-height: 1.35; }
+  .hero__phones { top: 50%; right: 0; bottom: auto; left: auto; width: 66vw; height: 75vh; transform: translateY(-42%); }
+  .hero__phone { top: 3%; }
+  .hero__phone .phone { width: clamp(7.4rem, 17vw, 9.4rem); }
+  .hero__phone--1 { top: 8%; left: 3%; }
+  .hero__phone--2 { left: 34%; }
+  .hero__phone--3 { left: 68%; }
+  .hero__story { display: block; }
+  .hero__story-divider { top: 8%; bottom: 8%; left: 32%; }
+  .hero__story-phone { top: 52%; left: 5.5%; }
+  .hero__story-phone .story-phone { width: clamp(8rem, 17vw, 9.5rem); }
+  .hero__product { display: block; top: 50%; left: 38%; width: 58%; }
+  .hero__product--1 { left: 4%; width: 58%; }
+  .hero__product .product-copy { max-width: none; }
+  .hero__product .product-copy__index { margin-bottom: .35rem; font-size: .46rem; }
+  .hero__product .launch-store { width: min(100%, 21rem); margin-bottom: .42rem; }
+  .hero__product .launch-store__veil { min-height: 1.55rem; margin-bottom: .25rem; padding: .16rem .4rem; }
+  .hero__product .launch-store__veil span { font-size: .42rem; }
+  .hero__product .launch-store__veil strong { font-size: .7rem; }
+  .hero__product .store-badge { height: 1.9rem; padding: .2rem .35rem; font-size: .56rem; }
+  .hero__product .store-badge small { font-size: .31rem; }
+  .hero__product .store-badge__icon { width: .78rem; height: .88rem; }
+  .hero__product .store-badge__icon--play { width: .72rem; height: .72rem; }
+  .hero__product .product-copy__brand { margin-bottom: .3rem; }
+  .hero__product .product-copy__brand--lucida .product-copy__logo { width: 7.5rem; }
+  .hero__product .product-copy__brand--hera .product-copy__logo { width: 5.3rem; height: 4rem; }
+  .hero__product .product-copy__brand--nirvaan .product-copy__logo { width: 7.8rem; }
+  .hero__product .product-copy__brand--nirvaan .app-logo__tagline { font-size: .45rem; }
+  .hero__product .product-copy__positioning { margin-top: .28rem; font-size: .9rem; }
+  .hero__product .product-copy__description { margin-top: .28rem; font-size: .59rem; line-height: 1.25; }
+  .hero__product .product-copy__proof { gap: .12rem; margin-top: .35rem; padding-top: .32rem; font-size: .52rem; line-height: 1.22; }
+  .scroll-cue { bottom: .65rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero { min-height: 100svh; }
+  .hero__story, .hero__product { display: none; }
+  .product-story { display: block; min-height: 0; }
+  .product-story__mobile { display: block; padding: 5rem var(--gutter); }
+  .mobile-product { display: grid; grid-template-columns: minmax(9rem, .8fr) 1.2fr; align-items: center; gap: 4rem; min-height: 80svh; }
+}
+
+@media (max-width: 480px) and (prefers-reduced-motion: reduce) {
+  .mobile-product { grid-template-columns: 1fr; gap: 2rem; min-height: 0; }
+  .mobile-product:nth-child(even) .phone { order: initial; }
+}

@@ -1,0 +1,86 @@
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(100%, var(--max-width));
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem var(--gutter);
+  border-bottom: 1px solid var(--color-border);
+}
+.brand-link { display: flex; height: 3.2rem; align-items: center; }
+.brand-link__logo { display: block; width: auto; height: 100%; object-fit: contain; }
+.site-header nav { display: flex; gap: clamp(1rem, 3vw, 2.5rem); color: var(--color-text-muted); font-size: .72rem; }
+.site-header nav a { padding: .5rem 0; transition: color .2s ease; }
+.site-header nav a:hover { color: var(--color-text); }
+.arrow-link { display: inline-flex; gap: 2.2rem; align-items: center; margin-top: 2rem; padding-bottom: .45rem; border-bottom: 1px solid var(--color-text-muted); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+.arrow-link span { color: var(--color-accent); transition: transform .2s ease; }
+.arrow-link:hover span { transform: translate(3px, -3px); }
+.phone { position: relative; width: clamp(13rem, 18vw, 17rem); aspect-ratio: .51; padding: .52rem; border-radius: var(--radius-device); background: linear-gradient(140deg, #788195 0%, #202839 17%, #080d16 65%, #657086 100%); box-shadow: var(--shadow-device); transform-style: preserve-3d; }
+.phone::before { content: ''; position: absolute; inset: 1px; border: 1px solid rgba(255,255,255,.18); border-radius: inherit; pointer-events: none; }
+.phone__edge { position: absolute; inset: 9% -.17rem 14% auto; width: .15rem; border-radius: 0 .2rem .2rem 0; background: #515c70; }
+.phone__screen { position: relative; height: 100%; overflow: hidden; border: 1px solid rgba(255,255,255,.08); border-radius: calc(var(--radius-device) - .45rem); background: #111827; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.phone__screen::after { content: ''; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 27%, rgba(255,255,255,.07) 46%, transparent 60%); pointer-events: none; }
+.phone__speaker { position: absolute; top: .62rem; left: 50%; transform: translateX(-50%); width: 28%; height: 1.15rem; border-radius: 2rem; background: #070a10; z-index: 3; }
+.phone__screen-light { position: absolute; width: 90%; aspect-ratio: 1; border-radius: 50%; filter: blur(35px); opacity: .25; }
+.app-logo { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.app-logo > img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.app-logo__tagline { display: block; margin-top: .45rem; color: #252a47; font-size: clamp(.42rem, .65vw, .62rem); font-weight: 400; letter-spacing: .06em; white-space: nowrap; }
+.app-logo--nirvaan > img { height: calc(100% - 1rem); }
+.phone__app-logo { position: relative; z-index: 1; width: 78%; height: 58%; }
+.phone__app-name { position: absolute; bottom: 2rem; z-index: 2; color: rgba(255,255,255,.6); font-size: .63rem; letter-spacing: .18em; text-transform: uppercase; }
+.phone .app-logo__tagline { font-size: .36rem; letter-spacing: .025em; }
+.phone__app-name { display: none; }
+.phone--nirvaan .phone__screen, .story-phone__identity--nirvaan { background: linear-gradient(160deg, #f8f6ed 0%, #e5dec8 100%); }
+.phone--nirvaan .phone__screen-light { background: #b98f3e; }
+.phone--nirvaan .phone__app-name { color: #252a47; }
+.phone--lucida .phone__screen, .story-phone__identity--lucida { background: radial-gradient(circle at 55% 36%, #2b4169, #0e1120 65%); }
+.phone--lucida .phone__screen-light { background: #edb96e; opacity: .4; }
+.phone--lucida .phone__app-logo { width: 100%; height: 100%; }
+.phone--lucida .phone__app-logo > img { object-fit: cover; }
+.phone--hera .phone__screen, .story-phone__identity--hera { background: #000; }
+.phone--hera .phone__screen-light { display: none; }
+.phone--hera .phone__screen::after, .story-phone .phone__screen::after { display: none; }
+.phone--hera .phone__app-logo { width: 100%; height: 100%; overflow: hidden; }
+.phone--hera .phone__app-logo > img { width: 155%; height: 155%; max-width: none; transform: scale(1.32); }
+.story-phone__identity { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.story-phone__identity > .app-logo { width: 78%; height: 58%; }
+.story-phone__identity--lucida > .app-logo { width: 100%; height: 100%; }
+.story-phone__identity--lucida .app-logo > img { object-fit: cover; }
+.story-phone__identity--hera > .app-logo { width: 100%; height: 100%; overflow: hidden; }
+.story-phone__identity--hera .app-logo > img { width: 155%; height: 155%; max-width: none; transform: scale(1.32); }
+.phone--nirvaan .phone__app-logo, .story-phone__identity--nirvaan > .app-logo { width: 78%; height: auto; gap: 0; }
+.phone--nirvaan .phone__app-logo > img, .story-phone__identity--nirvaan .app-logo > img { width: 100%; height: auto; }
+.phone--nirvaan .app-logo__tagline, .story-phone__identity--nirvaan .app-logo__tagline { margin-top: .18rem; font-size: clamp(.5rem, .7vw, .62rem); line-height: 1.1; letter-spacing: .025em; text-align: center; }
+
+.launch-store { width: min(100%, 24rem); margin: 0 0 1.3rem; }
+.launch-store__badges { display: grid; grid-template-columns: 1fr 1fr; gap: .55rem; }
+.store-badge { min-width: 0; height: 3.1rem; display: flex; align-items: center; gap: .55rem; padding: .45rem .65rem; border: 1px solid rgba(14,23,38,.32); border-radius: .58rem; background: #101722; color: white; font-size: .78rem; line-height: 1.05; box-shadow: 0 10px 22px rgba(14,23,38,.12); }
+.store-badge small { display: block; margin-bottom: .12rem; color: #bac2cf; font-size: .43rem; letter-spacing: .04em; }
+.store-badge__icon { position: relative; z-index: 3; width: 1.2rem; height: 1.35rem; flex: 0 0 auto; fill: currentColor; }
+.store-badge__icon--play { width: 1.12rem; height: 1.12rem; color: #a8e3d0; }
+.launch-store__veil { display: flex; min-height: 2.35rem; align-items: center; justify-content: space-between; gap: .6rem; margin-bottom: .55rem; padding: .35rem .85rem; border: 1px solid rgba(255,255,255,.2); border-radius: .45rem; background: linear-gradient(120deg, rgba(79,70,229,.97), rgba(154,91,200,.97) 56%, rgba(255,107,91,.96)); color: white; box-shadow: 0 8px 22px rgba(79,70,229,.25); }
+.launch-store__veil span { font-size: .58rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.launch-store__veil strong { padding: .08rem .38rem; border-radius: .3rem; background: rgba(8,14,25,.78); color: #fff; font-family: var(--font-display); font-size: 1rem; font-weight: 400; white-space: nowrap; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .phone__screen-light { animation: screen-breathe 5.5s ease-in-out infinite; }
+  .hero__phone .phone { animation: device-sway 6.8s ease-in-out infinite; }
+  .hero__phone--2 .phone { animation-delay: -2.2s; animation-duration: 7.6s; }
+  .hero__phone--3 .phone { animation-delay: -4.1s; animation-duration: 7.1s; }
+  .hero__story-phone .story-phone { animation: device-sway 7.2s ease-in-out infinite; }
+  .mobile-product .phone { animation: device-sway 7.5s ease-in-out infinite; }
+  .convergence__logo .app-logo { animation: logo-pulse 4.6s ease-in-out infinite; }
+  .convergence figure:nth-child(2) .app-logo { animation-delay: -1.4s; }
+  .convergence figure:nth-child(3) .app-logo { animation-delay: -2.8s; }
+}
+
+@keyframes device-sway {
+  0%, 100% { transform: translate3d(-4px, 0, 0) rotateY(-1.8deg) rotateX(.6deg); }
+  50% { transform: translate3d(5px, -8px, 0) rotateY(2.4deg) rotateX(-.7deg); }
+}
+@keyframes screen-breathe { 0%, 100% { opacity: .18; transform: scale(.92); } 50% { opacity: .38; transform: scale(1.08); } }
+@keyframes logo-pulse { 0%, 100% { opacity: .84; filter: brightness(.92); } 50% { opacity: 1; filter: brightness(1.08); } }
