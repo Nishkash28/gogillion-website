@@ -61,9 +61,8 @@ GitHub Pages artifact and deploys it to the `github-pages` environment.
 No deployment password, API key or repository secret is required. GitHub uses
 its automatically generated, short-lived `GITHUB_TOKEN` with only the
 permissions needed by the workflow. The final production target is
-`https://gogillion.com`. The workflow passes GitHub's resolved Pages base path
-to Vite so both the temporary project URL and the final root-domain URL load
-the same build correctly. Local and custom-domain builds default to `/`.
+`https://gogillion.com`, so the Vite production base is `/`. The deployment is
+built for the custom-domain root rather than the temporary GitHub project URL.
 
 ### Initial GitHub setup
 
