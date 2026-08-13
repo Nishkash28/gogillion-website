@@ -1,6 +1,8 @@
+import { publicAsset } from '../lib/publicAsset'
+
 export const company = {
   name: 'GoGillion Technologies',
-  logo: '/assets/brand/gogillion-logo.svg',
+  logo: publicAsset('assets/brand/gogillion-logo.svg'),
   description:
     'GoGillion Technologies is a Bengaluru-based consumer technology company building AI-enabled mobile applications for the decisions that matter most. We turn complex life questions into clear, personalised and trustworthy guidance.',
   mission:

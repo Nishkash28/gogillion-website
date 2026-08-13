@@ -61,19 +61,28 @@ GitHub Pages artifact and deploys it to the `github-pages` environment.
 No deployment password, API key or repository secret is required. GitHub uses
 its automatically generated, short-lived `GITHUB_TOKEN` with only the
 permissions needed by the workflow. The final production target is
-`https://gogillion.com`, so Vite must continue to use `base: '/'`.
+`https://gogillion.com`. The workflow passes GitHub's resolved Pages base path
+to Vite so both the temporary project URL and the final root-domain URL load
+the same build correctly. Local and custom-domain builds default to `/`.
 
 ### Initial GitHub setup
+
+GitHub Pages must be enabled for the repository before the workflow can
+configure or deploy the site. The workflow deliberately does not try to enable
+Pages itself because that would require an additional administrator credential.
 
 1. Review the pending files and make sure every file being published is safe
    for a public repository.
 2. Commit the website, lockfile and deployment workflow, then push the commit
    to the `main` branch.
 3. On GitHub, open the repository and go to **Settings → Pages**.
-4. Under **Build and deployment**, choose **GitHub Actions** as the source.
+4. Under **Build and deployment**, choose **GitHub Actions** as the source. This
+   creates/enables the repository's Pages site.
 5. Open the repository's **Actions** tab and select **Deploy website to GitHub
-   Pages**. Verify that both the build and deploy jobs finish successfully.
-6. Open the temporary GitHub Pages URL shown by the deployment and check the
+   Pages**. If the push-triggered run started before Pages was enabled, use
+   **Re-run all jobs** (or **Run workflow**) after completing step 4.
+6. Verify that both the build and deploy jobs finish successfully.
+7. Open the temporary GitHub Pages URL shown by the deployment and check the
    site before changing any DNS record.
 
 Every push to `main` starts a deployment automatically. The workflow can also

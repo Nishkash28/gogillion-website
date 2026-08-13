@@ -1,10 +1,12 @@
+import { publicAsset } from '../../lib/publicAsset'
+
 export function Navigation() {
   return (
     <header className="site-header">
       <a className="brand-link" href="#top" aria-label="GoGillion Technologies, home">
         <img
           className="brand-link__logo"
-          src="/assets/brand/gogillion-logo-2.webp"
+          src={publicAsset('assets/brand/gogillion-logo-2.webp')}
           alt="GoGillion Technologies"
         />
       </a>

@@ -1,3 +1,5 @@
+import { publicAsset } from '../lib/publicAsset'
+
 export type AppLink = {
   appStoreUrl: string
   googlePlayUrl: string
@@ -29,8 +31,8 @@ export const apps: readonly GoGillionApp[] = [
     id: 'lucida',
     order: 1,
     name: 'Lucida',
-    logo: '/assets/apps/lucida-logo.webp',
-    detailLogo: '/assets/apps/lucida-logo-2.webp',
+    logo: publicAsset('assets/apps/lucida-logo.webp'),
+    detailLogo: publicAsset('assets/apps/lucida-logo-2.webp'),
     positioning: 'Ancient knowledge, finally computable.',
     shortDescription:
       'Lucida structures the calculation systems and interpretive rules of Jyotish Shastra, numerology and palmistry, then uses AI reasoning to converge them into coherent, individualised guidance.',
@@ -50,9 +52,9 @@ export const apps: readonly GoGillionApp[] = [
     id: 'hera',
     order: 2,
     name: 'HerA',
-    logo: '/assets/apps/hera-logo.svg',
-    detailLogo: '/assets/apps/hera-logo-2.webp',
-    convergenceLogo: '/assets/apps/hera-logo-2.webp',
+    logo: publicAsset('assets/apps/hera-logo.svg'),
+    detailLogo: publicAsset('assets/apps/hera-logo-2.webp'),
+    convergenceLogo: publicAsset('assets/apps/hera-logo-2.webp'),
     positioning: 'Her body, understood at every stage.',
     shortDescription:
       'HerA is a women’s health companion for the whole arc of hormonal and reproductive life, from menstrual health and fertility to pregnancy, postpartum and menopause.',
@@ -72,7 +74,7 @@ export const apps: readonly GoGillionApp[] = [
     id: 'nirvaan',
     order: 3,
     name: 'Nirvaan',
-    logo: '/assets/apps/nirvaan-logo.svg',
+    logo: publicAsset('assets/apps/nirvaan-logo.svg'),
     logoTagline: 'Pause. Reflect. Understand.',
     positioning: 'A companion for the everyday, not a replacement for care.',
     shortDescription:
