@@ -104,8 +104,16 @@
 
 @media (max-width: 480px) {
   .brand-link { height: 2.65rem; }
-  .hero__phones { bottom: 1.6rem; }
-  .hero__phone .phone { width: clamp(6.2rem, 26vw, 7.4rem); }
+  .hero__stage { display: flex; flex-direction: column; align-items: stretch; padding-top: clamp(7rem, 18svh, 8rem); }
+  .hero__copy { flex: 0 0 auto; }
+  .hero__copy .eyebrow { margin-bottom: 1rem; }
+  .hero__copy h1 { font-size: clamp(3.25rem, 16vw, 4.35rem); }
+  .hero__copy > p:last-child { max-width: 22rem; margin-top: .8rem; font-size: clamp(.82rem, 3.65vw, .95rem); line-height: 1.38; }
+  .hero__phones { position: relative; inset: auto; flex: 1 1 auto; width: 96vw; height: auto; min-height: 0; margin: 1.25rem auto 3.2rem; transform: none; }
+  .hero__phone { top: 5%; }
+  .hero__phone .phone { width: clamp(5.65rem, min(26vw, 14svh), 7.4rem); }
+  .hero__phone .phone--nirvaan .phone__app-logo { width: 88%; }
+  .hero__phone .phone--nirvaan .app-logo__tagline { margin-top: .12rem; font-size: clamp(.38rem, 1.65vw, .46rem); }
   .mobile-product { grid-template-columns: 1fr; min-height: 0; padding: 5rem 0; }
   .mobile-product:nth-child(even) .phone { order: initial; }
   .mobile-product .phone { width: 11rem; margin: 0 auto 1rem; }
@@ -122,7 +130,10 @@
 @media (max-width: 360px) {
   .brand-link { height: 2.25rem; }
   .site-header nav { gap: .85rem; font-size: .68rem; }
-  .hero__phones { bottom: -.25rem; }
+  .hero__stage { padding-top: 6.5rem; }
+  .hero__copy h1 { font-size: clamp(3rem, 15.5vw, 3.5rem); }
+  .hero__copy > p:last-child { font-size: .8rem; }
+  .hero__phones { margin-bottom: 3rem; }
 }
 
 @media (max-height: 600px) and (orientation: landscape) {

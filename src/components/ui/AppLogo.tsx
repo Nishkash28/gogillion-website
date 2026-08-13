@@ -15,7 +15,8 @@ export function AppLogo({ app, decorative = false, className = '', eager = false
         src={src ?? app.logo}
         alt={decorative ? '' : app.alt}
         loading={eager ? 'eager' : 'lazy'}
-        decoding="async"
+        decoding={eager ? 'sync' : 'async'}
+        fetchPriority={eager ? 'high' : 'auto'}
       />
       {app.logoTagline && <span className="app-logo__tagline">{app.logoTagline}</span>}
     </span>
