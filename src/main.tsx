@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import App from './App'
 import './styles/index.css'
 import './animations/registerGsap'
+import { company } from './data/company'
 
 const organizationData = {
   '@context': 'https://schema.org',
@@ -10,7 +11,12 @@ const organizationData = {
   name: 'GoGillion Technologies',
   url: 'https://gogillion.com',
   logo: 'https://gogillion.com/assets/brand/gogillion-logo.svg',
-  email: 'info@gogillion.com',
+  email: company.contacts.map((contact) => contact.email),
+  contactPoint: company.contacts.map((contact) => ({
+    '@type': 'ContactPoint',
+    contactType: contact.label,
+    email: contact.email,
+  })),
 }
 
 const structuredData = document.createElement('script')

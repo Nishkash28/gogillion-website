@@ -29,7 +29,21 @@ export const company = {
       description: 'Systems that govern every output and recognise when human expertise should take over.',
     },
   ],
-  email: 'info@gogillion.com',
+  contacts: [
+    {
+      label: 'General Information',
+      email: 'info@gogillion.com',
+    },
+    {
+      label: 'Customer Support',
+      email: 'support@gogillion.com',
+    },
+    {
+      label: 'Grievances Office Contact',
+      detail: 'Director — Prachi Prakash',
+      email: 'prachi.prakash@gogillion.com',
+    },
+  ],
   privacyUrl: '',
   termsUrl: '',
   socialLinks: [] as { label: string; url: string }[],

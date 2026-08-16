@@ -5,7 +5,18 @@ export function Footer() {
     <footer className="footer" id="contact" data-reveal>
       <p className="eyebrow">Start a conversation</p>
       <h2>What should<br />intelligence <em>unlock next?</em></h2>
-      <a className="footer__email" href={`mailto:${company.email}`}>{company.email}<span aria-hidden="true">↗</span></a>
+      <address className="footer__contacts" aria-label="Contact email addresses">
+        {company.contacts.map((contact) => (
+          <a className="footer__contact" href={`mailto:${contact.email}`} key={contact.email}>
+            <span className="footer__contact-label">
+              {contact.label}
+              {'detail' in contact && <small>{contact.detail}</small>}
+            </span>
+            <strong>{contact.email}</strong>
+            <span className="footer__contact-arrow" aria-hidden="true">↗</span>
+          </a>
+        ))}
+      </address>
       <div className="footer__bottom">
         <span>© {new Date().getFullYear()} {company.name}</span>
         <a href="#top">Back to top ↑</a>

@@ -124,6 +124,9 @@
   .launch-store__veil { padding: .35rem .55rem; }
   .launch-store__veil strong { font-size: .88rem; }
   .about dl div { grid-template-columns: 1fr; gap: .5rem; }
+  .footer__contact { grid-template-columns: minmax(0, 1fr) auto; gap: .65rem 1rem; }
+  .footer__contact-label { grid-column: 1 / -1; }
+  .footer__contact strong { font-size: clamp(1.05rem, 5vw, 1.35rem); }
   .footer__bottom { gap: 2rem; }
 }
 
