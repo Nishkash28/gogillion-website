@@ -1,0 +1,45 @@
+/* Availability information, not download buttons: one clear launch hierarchy. */
+.launch-card {
+  --launch-accent: #d8be8b;
+  --launch-glow: #6b568b;
+  --launch-base: #172035;
+  width: min(100%, 24rem);
+  margin-bottom: 1.35rem;
+  padding: 1rem 1.15rem 0;
+  overflow: hidden;
+  border: 1px solid #ffffff28;
+  border-radius: .8rem;
+  color: #fffaf1;
+  background: radial-gradient(ellipse at 100% 0%, color-mix(in srgb, var(--launch-glow) 45%, transparent), transparent 70%), var(--launch-base);
+  box-shadow: 0 8px 20px #15203612, inset 0 1px 0 #ffffff12;
+}
+.launch-card--hera { --launch-accent: #f0bbb7; --launch-glow: #995c72; --launch-base: #30222d; }
+.launch-card--nirvaan { --launch-accent: #d7c495; --launch-glow: #68775c; --launch-base: #26352f; }
+.launch-card__heading { display: flex; align-items: center; justify-content: space-between; gap: .6rem; }
+.launch-card__status { display: inline-flex; align-items: center; gap: .45rem; color: var(--launch-accent); font-size: .63rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; }
+.launch-card__status i { width: .3rem; height: .3rem; border-radius: 50%; background: currentColor; box-shadow: 0 0 0 3px #ffffff09; }
+.launch-card__label { color: #dddcd9; font-size: .6rem; }
+.launch-card__date { margin: .35rem 0 .8rem; font-size: clamp(1.3rem, 1.8vw, 1.7rem); font-weight: 450; line-height: 1.2; letter-spacing: -.035em; }
+.launch-card__platforms { display: flex; align-items: center; gap: 1rem; margin: 0 -1.15rem; padding: .7rem 1.15rem; border-top: 1px solid #ffffff20; background: #00000014; }
+.launch-card__platforms > span { display: inline-flex; align-items: center; gap: .45rem; color: #f0eee9; font-size: .72rem; line-height: 1.1; white-space: nowrap; }
+.launch-card__platforms > span + span { padding-left: 1rem; border-left: 1px solid #ffffff25; }
+.launch-card .store-badge__icon { width: .85rem; height: 1rem; fill: currentColor; }
+.launch-card .store-badge__icon--play { width: .8rem; height: .85rem; color: inherit; }
+@media (max-width: 768px) {
+  .hero__product .launch-card { padding: .7rem .7rem 0; margin-bottom: .8rem; border-radius: .65rem; }
+  .hero__product .launch-card__heading { gap: .3rem; }
+  .hero__product .launch-card__status { font-size: .49rem; letter-spacing: .05em; gap: .35rem; }
+  .hero__product .launch-card__label { font-size: .48rem; }
+  .hero__product .launch-card__date { font-size: 1.18rem; margin: .4rem 0 .65rem; }
+  .hero__product .launch-card__platforms { margin: 0 -.7rem; padding: .6rem .7rem; gap: .65rem; }
+  .hero__product .launch-card__platforms > span { font-size: .6rem; gap: .3rem; }
+  .hero__product .launch-card__platforms > span + span { padding-left: .65rem; }
+  .hero__product .launch-card .store-badge__icon { width: .7rem; height: .8rem; }
+}
+@media (max-height: 600px) and (orientation: landscape) {
+  .hero__product .launch-card { max-width: 21rem; padding: .45rem .7rem 0; margin-bottom: .45rem; }
+  .hero__product .launch-card__date { font-size: 1rem; margin: .2rem 0 .4rem; }
+  .hero__product .launch-card__platforms { margin: 0 -.7rem; padding: .4rem .7rem; }
+  .hero__product .launch-card__status, .hero__product .launch-card__label { font-size: .48rem; }
+  .hero__product .launch-card__platforms > span { font-size: .57rem; }
+}

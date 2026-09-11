@@ -30,7 +30,9 @@
 .product-copy__brand--lucida .product-copy__logo > img { width: 100%; height: auto; object-fit: contain; }
 .product-copy__brand--hera .product-copy__logo { width: 9rem; height: 6.85rem; border-radius: .45rem; background: #000; }
 .product-copy__brand--hera .product-copy__logo > img { width: 100%; height: 100%; transform: none; }
-.product-copy__brand--nirvaan .product-copy__logo { width: 12rem; height: auto; align-items: center; overflow: visible; }
+/* The SVG has 23.1 units of blank space before the first letter in its
+   398.5-unit viewBox. Align the visible wordmark with the copy below. */
+.product-copy__brand--nirvaan .product-copy__logo { width: 12rem; height: auto; align-items: center; overflow: visible; transform: translateX(-5.7967378%); }
 .product-copy__brand--nirvaan .product-copy__logo > img { width: 100%; height: auto; align-self: flex-start; }
 .product-copy__brand--nirvaan .app-logo__tagline { margin-top: .12rem; font-size: .66rem; line-height: 1.15; letter-spacing: .045em; text-align: center; }
 .product-copy__positioning { margin-top: .9rem; font-family: var(--font-display); font-size: clamp(1.15rem, 1.65vw, 1.48rem); line-height: 1.18; }

@@ -122,3 +122,15 @@ Codex or local edit → commit → push to main → GitHub Actions → automatic
 Content, styling and animation updates do not require any new DNS work. Check
 the Actions run after each push; if the workflow succeeds, GitHub Pages serves
 the new production build automatically.
+
+## Product navigation
+
+The Products disclosure lists all three apps, with dates from `src/data/apps.ts`.
+`/lucida`, `/hera`, and `/nirvaan` open the corresponding settled scene in the
+landing-page animation. Browser Back/Forward also restores the selected scene.
+Reduced-motion visitors are taken to the corresponding static product article.
+
+The Vite build emits an `index.html` in each product directory so direct requests
+and refreshes work on GitHub Pages without a server rewrite or a 404 fallback.
+GitHub Pages may normalize these directory URLs with a trailing slash; both
+forms are supported by the client.

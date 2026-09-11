@@ -1,4 +1,5 @@
 import type { RefObject } from 'react'
+import { navigationStop } from '../lib/navigationState'
 import { gsap, ScrollTrigger, useGSAP } from './registerGsap'
 
 const desktopMotion =
@@ -34,23 +35,26 @@ export function useHeroAnimation(scope: RefObject<HTMLElement | null>) {
           !heroScreenLights?.length || !productPanels?.length || !phoneIdentities?.length
         ) return
 
-        gsap.from('[data-hero-copy] > *', {
-          y: compact ? 22 : 24,
-          opacity: 0,
-          duration: 0.8,
-          stagger: 0.1,
-          ease: 'power3.out',
-        })
+        if (!/^\/(lucida|hera|nirvaan)\/?$/.test(location.pathname)) {
+          gsap.from('[data-hero-copy] > *', {
+            y: compact ? 22 : 24,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: 'power3.out',
+          })
 
-        gsap.from('[data-hero-phone]', {
-          x: compact ? (index) => (index - 1) * 18 : 0,
-          y: compact ? 54 : 90,
-          opacity: 0,
-          rotateY: compact ? (index) => (index - 1) * -5 : 0,
-          duration: compact ? 1.05 : 1.15,
-          stagger: 0.12,
-          ease: 'power3.out',
-        })
+          gsap.from('[data-hero-phone]', {
+            x: compact ? (index) => (index - 1) * 18 : 0,
+            y: compact ? 54 : 90,
+            opacity: 0,
+            rotateY: compact ? (index) => (index - 1) * -5 : 0,
+            duration: compact ? 1.05 : 1.15,
+            stagger: 0.12,
+            ease: 'power3.out',
+          })
+
+        }
 
         gsap.set(productPanels, { autoAlpha: 0, y: compact ? 20 : 28 })
         gsap.set(phoneIdentities, { autoAlpha: 0 })
@@ -97,6 +101,7 @@ export function useHeroAnimation(scope: RefObject<HTMLElement | null>) {
         const timeline = gsap.timeline({
           defaults: { ease: 'power2.inOut' },
           scrollTrigger: {
+            id: 'product-story',
             trigger: scope.current,
             start: 'top top',
             end: 'bottom bottom',
@@ -105,7 +110,15 @@ export function useHeroAnimation(scope: RefObject<HTMLElement | null>) {
             anticipatePin: 1,
             invalidateOnRefresh: true,
             snap: {
-              snapTo: 'labelsDirectional',
+              snapTo: (value, trigger) => {
+                if (navigationStop.progress !== null) return navigationStop.progress
+                const stops = [0, 1.92 / 4.8, 3.35 / 4.8, 1]
+                const nearest = gsap.utils.snap(stops, value)
+                // Pixel rounding must not advance a freshly selected product.
+                return Math.abs(value - nearest) < .004
+                  ? nearest
+                  : ScrollTrigger.snapDirectional(stops)(value, trigger?.direction || 1)
+              },
               duration: compact ? { min: 0.3, max: 0.58 } : { min: 0.42, max: 0.8 },
               delay: compact ? 0.06 : 0.08,
               ease: 'power2.inOut',
@@ -200,6 +213,7 @@ export function useHeroAnimation(scope: RefObject<HTMLElement | null>) {
 
       mm.add(desktopMotion, () => buildStory(false))
       mm.add(compactMotion, () => buildStory(true))
+
 
       return () => mm.revert()
     },

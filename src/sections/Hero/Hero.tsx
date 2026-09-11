@@ -21,7 +21,7 @@ export function Hero() {
           <h1 id="hero-title">Intelligence<br />for <em>whatever<br />life asks.</em></h1>
           <p>Human expertise, made computable. Personalised guidance, kept within thoughtful guardrails.</p>
         </div>
-        <div className="hero__phones" ref={phonesRef} role="img" aria-label="Lucida, HerA and Nirvaan applications">
+        <div className="hero__phones" ref={phonesRef} role="img" aria-label="Lucida®, HerA® and Nirvaan® applications">
           <div className="hero__orbit" aria-hidden="true" />
           <div className="hero__depth-glow" aria-hidden="true" />
           {apps.map((app, index) => (
@@ -37,7 +37,9 @@ export function Hero() {
             <article
               className={`hero__product hero__product--${index}`}
               data-hero-product={index}
-              aria-label={`${app.name} product introduction`}
+              data-product-id={app.id}
+              tabIndex={-1}
+              aria-label={`${app.name}® product introduction`}
               key={app.id}
             >
               <ProductCopy app={app} eager />

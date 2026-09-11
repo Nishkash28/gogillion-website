@@ -18,20 +18,15 @@ function GooglePlayIcon() {
 
 export function LaunchStoreBadges({ app }: { app: GoGillionApp }) {
   return (
-    <div className="launch-store" aria-label={`${app.name} is coming in ${app.launchDate}`}>
-      <div className="launch-store__veil">
-        <span>{app.status}</span>
-        <strong>{app.launchDate}</strong>
+    <div className={`launch-card launch-card--${app.theme}`} role="group" aria-label={`${app.name}® launch availability`}>
+      <div className="launch-card__heading">
+        <span className="launch-card__status"><i aria-hidden="true" />{app.status}</span>
+        <span className="launch-card__label">Planned launch</span>
       </div>
-      <div className="launch-store__badges" aria-hidden="true">
-        <span className="store-badge">
-          <AppleIcon />
-          <span><small>Download on the</small>App Store</span>
-        </span>
-        <span className="store-badge">
-          <GooglePlayIcon />
-          <span><small>GET IT ON</small>Google Play</span>
-        </span>
+      <p className="launch-card__date">{app.launchDate}</p>
+      <div className="launch-card__platforms" aria-label="Planned platforms">
+        <span><AppleIcon />App Store</span>
+        <span><GooglePlayIcon />Google Play</span>
       </div>
     </div>
   )

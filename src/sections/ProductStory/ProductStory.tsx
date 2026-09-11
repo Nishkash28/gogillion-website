@@ -7,7 +7,7 @@ export function ProductStory() {
     <section className="product-story" aria-label="GoGillion applications">
       <div className="product-story__mobile">
         {apps.map((app) => (
-          <article className="mobile-product" data-mobile-product key={app.id}>
+          <article className="mobile-product" data-mobile-product id={app.id} tabIndex={-1} aria-label={`${app.name}®`} key={app.id}>
             <Phone app={app} />
             <ProductCopy app={app} />
           </article>

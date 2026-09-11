@@ -6,8 +6,11 @@ import { About } from './sections/About/About'
 import { Footer } from './sections/Footer/Footer'
 import { usePageMotion } from './animations/usePageMotion'
 
+import { useProductNavigation } from './hooks/useProductNavigation'
+
 export default function App() {
   usePageMotion()
+  useProductNavigation()
   return (
     <>
       <Navigation />

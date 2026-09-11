@@ -1,3 +1,4 @@
+import { RegisteredName } from '../../components/ui/RegisteredName'
 import { useRef } from 'react'
 import { apps } from '../../data/apps'
 import { company } from '../../data/company'
@@ -35,7 +36,7 @@ export function Convergence() {
             <span className={`convergence__logo convergence__logo--${app.theme}`}>
               <AppLogo app={app} src={app.convergenceLogo} decorative />
             </span>
-            <figcaption>{app.name} · {app.launchDate}</figcaption>
+            <figcaption><a href={`/${app.id}`}><RegisteredName name={app.name} /> · {app.launchDate} <span aria-hidden="true">↗</span></a></figcaption>
           </figure>
         ))}
       </div>

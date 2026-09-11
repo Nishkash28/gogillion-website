@@ -13,11 +13,12 @@ export function AppLogo({ app, decorative = false, className = '', eager = false
     <span className={`app-logo app-logo--${app.theme} ${className}`}>
       <img
         src={src ?? app.logo}
-        alt={decorative ? '' : app.alt}
+        alt={decorative ? '' : `${app.name}® application logo`}
         loading={eager ? 'eager' : 'lazy'}
         decoding={eager ? 'sync' : 'async'}
         fetchPriority={eager ? 'high' : 'auto'}
       />
+      <sup className="app-logo__registered" aria-hidden="true">®</sup>
       {app.logoTagline && <span className="app-logo__tagline">{app.logoTagline}</span>}
     </span>
   )

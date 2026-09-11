@@ -37,7 +37,7 @@ export const apps: readonly GoGillionApp[] = [
     shortDescription:
       'Lucida structures the calculation systems and interpretive rules of Jyotish Shastra, numerology and palmistry, then uses AI reasoning to converge them into coherent, individualised guidance.',
     status: 'Coming soon',
-    launchDate: 'August 2026',
+    launchDate: 'September 2026',
     proofPoints: [
       'Classical Indian schools, structurally codified',
       'Jyotish, numerology and palmistry brought together',
@@ -59,7 +59,7 @@ export const apps: readonly GoGillionApp[] = [
     shortDescription:
       'HerA is a women’s health companion for the whole arc of hormonal and reproductive life, from menstrual health and fertility to pregnancy, postpartum and menopause.',
     status: 'Coming soon',
-    launchDate: 'October 2026',
+    launchDate: 'November 2026',
     proofPoints: [
       'Life-stage-aware, low-burden tracking',
       'Contextual guidance grounded in expert frameworks',
@@ -80,7 +80,7 @@ export const apps: readonly GoGillionApp[] = [
     shortDescription:
       'Nirvaan offers non-clinical, everyday mental-wellness support through structured self-reflection, mood and habit awareness, and coping frameworks grounded in cultural context.',
     status: 'Coming soon',
-    launchDate: 'December 2026',
+    launchDate: 'Early 2027',
     proofPoints: [
       'Structured reflection, mood and habit awareness',
       'Coping frameworks grounded in cultural context',

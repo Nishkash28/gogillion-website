@@ -1,3 +1,4 @@
+import { RegisteredName } from '../ui/RegisteredName'
 import type { GoGillionApp } from '../../data/apps'
 import { AppLogo } from '../ui/AppLogo'
 
@@ -15,7 +16,7 @@ export function Phone({ app, className = '', eager = false }: PhoneProps) {
         <span className="phone__speaker" />
         <div className="phone__screen-light" />
         <AppLogo app={app} decorative eager={eager} className="phone__app-logo" />
-        <span className="phone__app-name">{app.name}</span>
+        <span className="phone__app-name"><RegisteredName name={app.name} /></span>
       </div>
     </div>
   )
