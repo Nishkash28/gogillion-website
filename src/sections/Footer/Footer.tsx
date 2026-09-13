@@ -1,4 +1,5 @@
 import { company } from '../../data/company'
+import { publicAsset } from '../../lib/publicAsset'
 
 export function Footer() {
   return (
@@ -17,6 +18,28 @@ export function Footer() {
           </a>
         ))}
       </address>
+      <div className="footer__company">
+        <address className="footer__office">
+          <span className="footer__office-label">Registered Office:</span>
+          Plot No. 37 21&amp;24, Workhub by Novel Office,<br />
+          Whitefield Road, Doddanekundi, II Phase,<br />
+          Industrial Area, Bengaluru - 560048
+        </address>
+        <div className="footer__brands" aria-label="GoGillion and startup recognition">
+          <figure className="footer__brand">
+            <div className="footer__logo-frame footer__logo-frame--gogillion">
+              <img src={publicAsset('assets/brand/gogillion-footer-logo.png')} alt="GoGillion Technologies" width="960" height="720" loading="lazy" />
+            </div>
+            <figcaption>Intelligence for Whatever Life Asks.</figcaption>
+          </figure>
+          <figure className="footer__brand">
+            <div className="footer__logo-frame footer__logo-frame--dpiit">
+              <img src={publicAsset('assets/brand/dpiit-startup-india.png')} alt="DPIIT Startup India" width="993" height="410" loading="lazy" />
+            </div>
+            <figcaption>A DPIIT recognized startup.</figcaption>
+          </figure>
+        </div>
+      </div>
       <div className="footer__bottom">
         <span>© {new Date().getFullYear()} {company.name}</span>
         <a href="#top">Back to top ↑</a>
