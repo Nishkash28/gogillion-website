@@ -134,3 +134,10 @@ The Vite build emits an `index.html` in each product directory so direct request
 and refreshes work on GitHub Pages without a server rewrite or a 404 fallback.
 GitHub Pages may normalize these directory URLs with a trailing slash; both
 forms are supported by the client.
+
+The Lucida privacy policy is maintained in `src/content/lucida_privacy_policy.md`.
+The build also emits `/lucida/privacy.html` and `/lucida/privacy/index.html` so
+the app-store URL works with or without a trailing slash. This page reuses the
+site's header and footer but is intentionally absent
+from the website navigation and sitemap. It is public to anyone who has the URL;
+the `noindex` tag only asks search engines not to list it.
