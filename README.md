@@ -34,8 +34,9 @@ typecheck` and `npm run lint` independently.
   `src/data/company.ts`.
 - The current applications, their launch order, descriptions, availability and
   links live in `src/data/apps.ts`.
+- GGT-Business copy and launch timing live in `src/data/business.ts`.
 - Add a store or product CTA by placing a complete `https://` URL in the
-  appropriate app field. Empty links are never rendered.
+  appropriate app field. Store icons become clickable when their URLs are supplied; empty URLs leave the icons non-clickable.
 - Public logos are in `public/assets/brand/` and `public/assets/apps/`. Update
   the matching data path after replacing a logo.
 
@@ -125,10 +126,14 @@ the new production build automatically.
 
 ## Product navigation
 
-The Products disclosure lists all three apps, with dates from `src/data/apps.ts`.
-`/lucida`, `/hera`, and `/nirvaan` open the corresponding settled scene in the
-landing-page animation. Browser Back/Forward also restores the selected scene.
-Reduced-motion visitors are taken to the corresponding static product article.
+The Offerings disclosure links to homepage sections with hash URLs (`/#lucida`,
+`/#hera`, `/#nirvaan`, and `/#ggt-business`). Browser Back/Forward restores the
+selected section. Reduced-motion visitors see static product articles.
+
+`/lucida`, `/hera`, `/nirvaan`, and `/ggt-business` are standalone offering pages
+with the shared header and footer. They are accessible by direct URL and have
+no incoming links from the homepage. They are not listed in the sitemap.
+The app pages share descriptions, dates and store links from `src/data/apps.ts`.
 
 The Vite build emits an `index.html` in each product directory so direct requests
 and refreshes work on GitHub Pages without a server rewrite or a 404 fallback.

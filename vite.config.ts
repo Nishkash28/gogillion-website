@@ -11,7 +11,7 @@ export default defineConfig({
       if (!index || index.type !== 'asset') throw new Error('Missing landing page output')
       if (typeof index.source !== 'string') throw new Error('Unexpected landing page output')
       const homeHtml = index.source
-      for (const app of ['lucida', 'hera', 'nirvaan']) {
+      for (const app of ['lucida', 'hera', 'nirvaan', 'ggt-business']) {
         let source = homeHtml
         if (app === 'lucida') {
           source = source
@@ -47,6 +47,20 @@ export default defineConfig({
             )
             .replace('<title>GoGillion Technologies</title>', '<title>Lucida® | GoGillion Technologies</title>')
         }
+        const metadata: Record<string, { title: string; description: string }> = {
+          lucida: { title: 'Lucida®', description: 'Ancient knowledge, finally computable. Personalised guidance through Jyotish Shastra, numerology and palmistry. Planned launch November 2026.' },
+          hera: { title: 'HerA®', description: 'A women’s health companion for every stage of hormonal and reproductive life. Planned launch December 2026.' },
+          nirvaan: { title: 'Nirvaan®', description: 'Non-clinical, everyday mental-wellness support through reflection, mood awareness and culturally grounded coping frameworks. Planned launch early 2027.' },
+          'ggt-business': { title: 'GGT-Business', description: 'AI-led decision-making assistance for business users, built around industry context and human expertise. Industry-specific launches planned from January 2027.' },
+        }
+        const { title, description } = metadata[app]
+        source = source
+          .replace(/<title>.*?<\/title>/, `<title>${title} | GoGillion Technologies</title>`)
+          .replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="https://gogillion.com/${app}" />`)
+          .replace(/<meta property="og:url" content="[^"]*" \/>/, `<meta property="og:url" content="https://gogillion.com/${app}" />`)
+          .replace(/<meta property="og:title" content="[^"]*" \/>/, `<meta property="og:title" content="${title} | GoGillion Technologies" />`)
+          .replace(/<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${description}" />`)
+          .replace(/<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${description}" />`)
         this.emitFile({ type: 'asset', fileName: `${app}/index.html`, source })
       }
 

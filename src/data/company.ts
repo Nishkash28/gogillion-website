@@ -4,7 +4,7 @@ export const company = {
   name: 'GoGillion Technologies',
   logo: publicAsset('assets/brand/gogillion-logo.svg'),
   description:
-    'GoGillion Technologies is a Bengaluru-based consumer technology company building AI-enabled mobile applications for the decisions that matter most. We turn complex life questions into clear, personalised and trustworthy guidance.',
+    'GoGillion Technologies is a Bengaluru-based technology company building AI-enabled applications for individuals and businesses. We combine human expertise with thoughtful AI to help people navigate complex questions and make clearer, more confident decisions.',
   mission:
     'To build trusted, intelligent applications that combine AI-powered insights with human expertise, helping people make clearer, more confident decisions.',
   vision:

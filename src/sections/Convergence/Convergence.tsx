@@ -1,6 +1,7 @@
 import { RegisteredName } from '../../components/ui/RegisteredName'
 import { useRef } from 'react'
 import { apps } from '../../data/apps'
+import { business } from '../../data/business'
 import { company } from '../../data/company'
 import { gsap, useGSAP } from '../../animations/registerGsap'
 import { AppLogo } from '../../components/ui/AppLogo'
@@ -36,9 +37,15 @@ export function Convergence() {
             <span className={`convergence__logo convergence__logo--${app.theme}`}>
               <AppLogo app={app} src={app.convergenceLogo} decorative />
             </span>
-            <figcaption><a href={`/${app.id}`}><RegisteredName name={app.name} /> · {app.launchDate} <span aria-hidden="true">↗</span></a></figcaption>
+            <figcaption><a href={`/#${app.id}`}><RegisteredName name={app.name} /> · {app.launchDate} <span aria-hidden="true">↓</span></a></figcaption>
           </figure>
         ))}
+        <figure data-convergence-logo>
+          <span className="convergence__logo convergence__logo--business">
+            <img src={business.logo} alt="GoGillion Technologies logo" width="220" height="120" loading="lazy" />
+          </span>
+          <figcaption><a href="/#ggt-business">{business.name} · {business.launchDate} <span aria-hidden="true">↓</span></a></figcaption>
+        </figure>
       </div>
       <ol className="architecture-flow" data-reveal>
         {company.architecture.map((layer) => (

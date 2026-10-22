@@ -1,6 +1,7 @@
 import { RegisteredName } from '../ui/RegisteredName'
 import { useEffect, useRef, useState } from 'react'
 import { publicAsset } from '../../lib/publicAsset'
+import { business } from '../../data/business'
 import { apps } from '../../data/apps'
 
 export function Navigation() {
@@ -27,15 +28,20 @@ export function Navigation() {
           if (event.key === 'Escape') { setOpen(false); trigger.current?.focus() }
         }}>
           <button ref={trigger} className="product-menu__trigger" aria-expanded={open} aria-controls="product-menu" onClick={() => setOpen(!open)}>
-            Products <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" strokeWidth="1.4" /></svg>
+            Offerings <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" strokeWidth="1.4" /></svg>
           </button>
           <div id="product-menu" className="product-menu__panel" hidden={!open}>
-            <p className="product-menu__eyebrow">Three apps. A world of possibility.</p>
-            {apps.map((app) => <a href={`/${app.id}`} key={app.id} onClick={() => setOpen(false)}>
+            <p className="product-menu__eyebrow">Intelligence for life and business.</p>
+            {apps.map((app) => <a href={`/#${app.id}`} key={app.id} onClick={() => setOpen(false)}>
               <span className={`product-menu__dot product-menu__dot--${app.id}`} aria-hidden="true" />
               <span><strong><RegisteredName name={app.name} /></strong><small>{app.launchDate}</small></span>
-              <span className="product-menu__arrow" aria-hidden="true">↗</span>
+              <span className="product-menu__arrow" aria-hidden="true">↓</span>
             </a>)}
+            <a href="/#ggt-business" onClick={() => setOpen(false)}>
+              <span className="product-menu__dot" aria-hidden="true" />
+              <span><strong>{business.name}</strong><small>{business.launchDate}</small></span>
+              <span className="product-menu__arrow" aria-hidden="true">↓</span>
+            </a>
           </div>
         </div>
         <a className="nav-about" href="/#about">About</a>

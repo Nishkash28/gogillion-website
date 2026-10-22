@@ -1,0 +1,43 @@
+.business-offering { scroll-margin-top: 6rem; padding: clamp(5rem, 10vw, 9rem) var(--gutter); background: radial-gradient(ellipse at 18% 48%, #6353e51c, transparent 55%), var(--color-ink-deep); border-bottom: 1px solid var(--color-border); }
+.business-offering__inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: clamp(3rem, 7vw, 7rem); max-width: 1120px; margin: auto; }
+.business-offering__identity { text-align: center; padding: 3rem 1rem; }
+.business-offering__identity img { width: min(100%, 26rem); height: auto; margin: 0 auto 2rem; }
+.business-offering__identity h1, .business-offering__identity h2 { font-size: clamp(2rem, 3.5vw, 3rem); letter-spacing: -.035em; line-height: 1.1; }
+.business-offering__positioning { margin-top: 1.5rem; font-size: clamp(2.2rem, 3.7vw, 3.5rem); line-height: 1.12; letter-spacing: -.035em; }
+.business-offering__description { margin-top: 1.5rem; color: var(--color-text-muted); line-height: 1.75; }
+.business-offering__launch { margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--color-border); color: #c7bafa; font-size: .85rem; }
+.convergence__logos { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 76rem; }
+.convergence figure { min-width: 0; padding: 1.25rem .5rem; }
+.convergence__logo--business img { position: relative; z-index: 1; width: 11rem; height: 7.5rem; object-fit: contain; padding: .45rem; }
+.offering-page { padding-top: 7rem; background: var(--color-ink); }
+.offering-detail { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); align-items: center; gap: clamp(3rem, 8vw, 8rem); min-height: calc(100svh - 7rem); padding: clamp(3rem, 6vw, 6rem) max(var(--gutter), calc((100vw - 1120px) / 2)); background: #ece9e3; color: var(--color-ink); }
+.offering-detail--hera { background: #eee3e3; }
+.offering-detail--nirvaan { background: #e9e9e4; }
+.offering-detail__visual { display: grid; place-items: center; }
+.offering-detail__visual .phone { width: clamp(13rem, 23vw, 19rem); }
+.offering-detail .eyebrow { color: #60697b; }
+.offering-detail h1 { margin-top: 1.2rem; font-size: clamp(3rem, 6vw, 5.8rem); line-height: 1.1; }
+.offering-detail__positioning { margin-top: 1.3rem; font-family: var(--font-display); font-size: clamp(1.6rem, 2.4vw, 2.2rem); line-height: 1.2; }
+.offering-detail__description { margin-top: 1.2rem; color: #566174; line-height: 1.75; }
+.offering-detail .product-copy__proof { font-size: .9rem; margin-top: 1.25rem; }
+.offering-detail .launch-card { margin: 2rem 0 0; }
+.launch-card__platforms > a { display: inline-flex; align-items: center; gap: .45rem; color: #f0eee9; font-size: .72rem; line-height: 1.1; white-space: nowrap; }
+.launch-card__platforms > :nth-child(2) { padding-left: 1rem; border-left: 1px solid #ffffff25; }
+.launch-card__platforms > a:hover { text-decoration: underline; }
+@media (max-width: 1100px) and (min-width: 769px) {
+  .convergence__logos { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 46rem; }
+}
+@media (max-width: 768px) {
+  .business-offering__inner, .offering-detail { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+  .business-offering__identity { padding: 0 1rem 2rem; }
+  .business-offering__identity img { max-width: 20rem; }
+  .business-offering__copy { max-width: 34rem; margin: auto; }
+  .business-offering__positioning { font-size: clamp(2.2rem, 7vw, 3.5rem); }
+  .convergence__logos { grid-template-columns: 1fr; max-width: 28rem; }
+  .convergence figure { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .75rem; }
+  .convergence__logo .app-logo, .convergence__logo--business img { max-width: 100%; }
+  .offering-page { padding-top: 6rem; }
+  .offering-detail { padding-top: 2rem; padding-bottom: 4rem; }
+  .offering-detail__visual .phone { width: 12rem; }
+  .offering-detail__copy { max-width: 34rem; margin: auto; }
+}

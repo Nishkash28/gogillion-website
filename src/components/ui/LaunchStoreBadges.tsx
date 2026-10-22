@@ -25,8 +25,12 @@ export function LaunchStoreBadges({ app }: { app: GoGillionApp }) {
       </div>
       <p className="launch-card__date">{app.launchDate}</p>
       <div className="launch-card__platforms" aria-label="Planned platforms">
-        <span><AppleIcon />App Store</span>
-        <span><GooglePlayIcon />Google Play</span>
+        { /^https:\/\//.test(app.links.appStoreUrl)
+          ? <a href={app.links.appStoreUrl} aria-label={`${app.name} on the App Store`}><AppleIcon />App Store</a>
+          : <span><AppleIcon />App Store</span> }
+        { /^https:\/\//.test(app.links.googlePlayUrl)
+          ? <a href={app.links.googlePlayUrl} aria-label={`${app.name} on Google Play`}><GooglePlayIcon />Google Play</a>
+          : <span><GooglePlayIcon />Google Play</span> }
       </div>
     </div>
   )

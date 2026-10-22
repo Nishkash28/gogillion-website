@@ -1,6 +1,5 @@
 import { navigationStop } from '../lib/navigationState'
 import { useEffect } from 'react'
-import { apps } from '../data/apps'
 import { ScrollTrigger } from '../animations/registerGsap'
 import { scrollToDestination } from '../lib/productNavigation'
 
@@ -16,8 +15,7 @@ export function useProductNavigation() {
     window.addEventListener('keydown', keyRelease)
     window.addEventListener('pointerdown', release, { passive: true })
     const resolve = () => {
-      const path = location.pathname.replace(/^\/|\/$/g, '')
-      const id = location.hash.slice(1) || (apps.some((app) => app.id === path) ? path : 'top')
+      const id = location.hash.slice(1) || 'top'
       scrollToDestination(id)
     }
     const ready = () => {
@@ -34,12 +32,11 @@ export function useProductNavigation() {
       if (!link || link.target || link.hasAttribute('download')) return
       const url = new URL(link.href)
       if (url.origin !== location.origin) return
-      const path = url.pathname.replace(/^\/|\/$/g, '')
-      const product = apps.find((app) => app.id === path)
-      const id = url.hash.slice(1) || product?.id
+      if (url.pathname !== '/') return
+      const id = url.hash.slice(1)
       if (!id) return
       event.preventDefault()
-      history.pushState(null, '', product && !url.hash ? `/${product.id}` : `/${url.hash}`)
+      history.pushState(null, '', `/${url.hash}`)
       scrollToDestination(id, true)
     }
     document.addEventListener('click', click)
