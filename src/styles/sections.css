@@ -10,8 +10,8 @@
 .hero__orbit { position: absolute; top: 18%; left: 0; width: 98%; height: 58%; border: 1px solid rgba(154,167,189,.13); border-radius: 50%; transform: rotateX(66deg) rotateZ(-5deg); }
 .hero__depth-glow { position: absolute; left: 19%; top: 22%; width: 64%; aspect-ratio: 1.4; border-radius: 50%; background: radial-gradient(circle, rgba(99,83,229,.23), rgba(255,107,91,.08) 42%, transparent 70%); filter: blur(24px); transform: translateZ(-150px); }
 .hero__phone { position: absolute; top: 10%; transform-style: preserve-3d; }
-.hero__phone--1 { top: 14%; left: 3%; z-index: 2; transform: translate3d(0, 0, 30px) rotateY(13deg) rotateZ(-3deg); }
-.hero__phone--2 { left: 34%; z-index: 3; transform: translate3d(0, -2%, 80px) rotateY(0) rotateZ(1deg); }
+.hero__phone--1 { top: 14%; left: 4%; z-index: 2; transform: translate3d(0, 0, 30px) rotateY(13deg) rotateZ(-3deg); }
+.hero__phone--2 { left: 35.7%; z-index: 3; transform: translate3d(0, -2%, 80px) rotateY(0) rotateZ(1deg); }
 .hero__phone--3 { left: 68%; z-index: 2; transform: translate3d(0, 6%, 30px) rotateY(-13deg) rotateZ(3deg); }
 .hero__story { position: absolute; inset: 0; z-index: 4; width: min(100%, var(--max-width)); height: 100%; margin: auto; pointer-events: none; perspective: 1350px; }
 .hero__story-divider { position: absolute; top: 8%; bottom: 8%; left: 50%; width: 1px; background: rgba(14,23,38,.12); opacity: 0; }

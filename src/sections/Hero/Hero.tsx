@@ -19,7 +19,7 @@ export function Hero() {
         <div className="hero__copy" data-hero-copy>
           <p className="eyebrow">GoGillion Technologies</p>
           <h1 id="hero-title">Intelligence<br />for <em>whatever<br />life asks.</em></h1>
-          <p>Human expertise, made computable. Personalised guidance, kept within thoughtful guardrails.</p>
+          <p>Human expertise, made computable with AI. Personalised guidance, kept within thoughtful guardrails.</p>
         </div>
         <div className="hero__phones" ref={phonesRef} role="img" aria-label="Lucida®, HerA® and Nirvaan® applications">
           <div className="hero__orbit" aria-hidden="true" />

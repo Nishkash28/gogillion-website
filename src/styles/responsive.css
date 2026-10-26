@@ -2,7 +2,7 @@
   .hero__copy { width: 34vw; }
   .hero__phones { right: 0; width: 66vw; }
   .hero__phone .phone { width: clamp(8.75rem, 17vw, 10.5rem); }
-  .hero__phone--1 { left: 5%; }
+  .hero__phone--1 { left: 6%; }
   .hero__product { left: 54%; width: 42vw; }
   .hero__product--1 { left: var(--gutter); width: 42%; }
 }

@@ -6,8 +6,9 @@ export function BusinessOffering({ standalone = false }: { standalone?: boolean 
     <section className="business-offering" id="ggt-business" tabIndex={-1} aria-labelledby="business-title">
       <div className="business-offering__inner">
         <div className="business-offering__identity">
-          <img src={business.logo} alt="GoGillion Technologies logo" width="420" height="150" loading={standalone ? 'eager' : 'lazy'} />
-          <Heading id="business-title">{business.name}</Heading>
+          <Heading id="business-title">
+            <img src={business.logo} alt="GGT Business" width="490" height="116" loading={standalone ? 'eager' : 'lazy'} />
+          </Heading>
         </div>
         <div className="business-offering__copy">
           <p className="eyebrow">{standalone ? 'Intelligence for business' : '04 / The collection'}</p>

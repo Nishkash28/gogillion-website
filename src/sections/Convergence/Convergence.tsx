@@ -42,7 +42,7 @@ export function Convergence() {
         ))}
         <figure data-convergence-logo>
           <span className="convergence__logo convergence__logo--business">
-            <img src={business.logo} alt="GoGillion Technologies logo" width="220" height="120" loading="lazy" />
+            <img src={business.logo} alt="GGT Business logo" width="490" height="116" loading="lazy" />
           </span>
           <figcaption><a href="/#ggt-business">{business.name} · {business.launchDate} <span aria-hidden="true">↓</span></a></figcaption>
         </figure>

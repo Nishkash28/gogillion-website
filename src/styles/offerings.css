@@ -1,7 +1,7 @@
 .business-offering { scroll-margin-top: 6rem; padding: clamp(5rem, 10vw, 9rem) var(--gutter); background: radial-gradient(ellipse at 18% 48%, #6353e51c, transparent 55%), var(--color-ink-deep); border-bottom: 1px solid var(--color-border); }
 .business-offering__inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: clamp(3rem, 7vw, 7rem); max-width: 1120px; margin: auto; }
 .business-offering__identity { text-align: center; padding: 3rem 1rem; }
-.business-offering__identity img { width: min(100%, 26rem); height: auto; margin: 0 auto 2rem; }
+.business-offering__identity img { width: min(100%, 26rem); height: auto; margin: 0 auto; }
 .business-offering__identity h1, .business-offering__identity h2 { font-size: clamp(2rem, 3.5vw, 3rem); letter-spacing: -.035em; line-height: 1.1; }
 .business-offering__positioning { margin-top: 1.5rem; font-size: clamp(2.2rem, 3.7vw, 3.5rem); line-height: 1.12; letter-spacing: -.035em; }
 .business-offering__description { margin-top: 1.5rem; color: var(--color-text-muted); line-height: 1.75; }
