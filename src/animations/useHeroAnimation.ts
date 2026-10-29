@@ -35,7 +35,7 @@ export function useHeroAnimation(scope: RefObject<HTMLElement | null>) {
           !heroScreenLights?.length || !productPanels?.length || !phoneIdentities?.length
         ) return
 
-        if (!/^\/(lucida|hera|nirvaan)\/?$/.test(location.pathname)) {
+        if (!location.hash && location.pathname === '/') {
           gsap.from('[data-hero-copy] > *', {
             y: compact ? 22 : 24,
             opacity: 0,
@@ -44,15 +44,9 @@ export function useHeroAnimation(scope: RefObject<HTMLElement | null>) {
             ease: 'power3.out',
           })
 
-          gsap.from('[data-hero-phone]', {
-            x: compact ? (index) => (index - 1) * 18 : 0,
-            y: compact ? 54 : 90,
-            opacity: 0,
-            rotateY: compact ? (index) => (index - 1) * -5 : 0,
-            duration: compact ? 1.05 : 1.15,
-            stagger: 0.12,
-            ease: 'power3.out',
-          })
+          // Phone opacity/transforms belong exclusively to the scroll timeline.
+          // A separate entrance tween can overwrite a deep-linked scene or a
+          // quick first scroll after its handoff has already completed.
 
         }
 
@@ -176,8 +170,8 @@ export function useHeroAnimation(scope: RefObject<HTMLElement | null>) {
           .set([storyDevice, storyLight], { animationPlayState: 'running' }, 1.82)
           .addLabel('lucida', 1.92)
           .to(productPanels[0], { autoAlpha: 0, y: compact ? -24 : -34, duration: 0.48 }, 2.12)
-          .to(phoneIdentities[0], { autoAlpha: 0, duration: 0.32 }, 2.18)
-          .to(phoneIdentities[1], { autoAlpha: 1, duration: 0.38 }, 2.46)
+          .to(phoneIdentities[1], { autoAlpha: 1, duration: 0.38 }, 2.18)
+          .set(phoneIdentities[0], { autoAlpha: 0 }, 2.56)
           .to(destinationPhone, {
             x: () => getHerATranslateX(),
             rotateY: -7,
@@ -192,8 +186,8 @@ export function useHeroAnimation(scope: RefObject<HTMLElement | null>) {
           }, 2.54)
           .addLabel('hera', 3.35)
           .to(productPanels[1], { autoAlpha: 0, y: compact ? -24 : -34, duration: 0.48 }, 3.57)
-          .to(phoneIdentities[1], { autoAlpha: 0, duration: 0.32 }, 3.64)
-          .to(phoneIdentities[2], { autoAlpha: 1, duration: 0.38 }, 3.91)
+          .to(phoneIdentities[2], { autoAlpha: 1, duration: 0.38 }, 3.64)
+          .set(phoneIdentities[1], { autoAlpha: 0 }, 4.02)
           .to(destinationPhone, { x: 0, rotateY: 7, duration: 1.12 }, 3.57)
           .to(storyDivider, { x: 0, duration: 1.12 }, 3.57)
           .to(productPanels[2], {

@@ -6,9 +6,9 @@ export const company = {
   description:
     'GoGillion Technologies is a Bengaluru-based technology company building AI-enabled applications for individuals and businesses. We combine human expertise with thoughtful AI to help people navigate complex questions and make clearer, more confident decisions.',
   mission:
-    'To build trusted, intelligent applications that combine AI-powered insights with human expertise, helping people make clearer, more confident decisions.',
+    'To build trusted, intelligent applications that combine AI-powered insights with human expertise, helping people make clearer, more confident decisions across the most important facets of their personal and professional lives.',
   vision:
-    'A world where everyone has a guiding light for the decisions that shape their lives — where no one has to face their health or the uncertainties ahead alone.',
+    'A world where everyone has a guiding light for the decisions that shape their lives - where no one has to face life’s uncertainties alone.',
   philosophy:
     'Human domain expertise is codified into computable frameworks. AI generates personalised insight within those bounds. Safety systems govern every output.',
   foundation: 'Built in India, on Indian knowledge, for a global audience.',

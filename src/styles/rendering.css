@@ -1,0 +1,49 @@
+/* Keep the device's 3D motion on its outer wrapper. Composite the clipped
+   screen as one flat surface so WebKit cannot depth-sort its artwork away. */
+.phone { transform-style: flat; }
+.phone__screen { isolation: isolate; transform: translateZ(0); transform-style: flat; }
+.phone__screen .app-logo { flex-shrink: 0; }
+.phone__screen .app-logo > img { flex: none; }
+.story-phone__identity { transform-style: flat; }
+.story-phone__identity[data-phone-identity="0"] { z-index: 0; }
+.story-phone__identity[data-phone-identity="1"] { z-index: 1; }
+.story-phone__identity[data-phone-identity="2"] { z-index: 2; }
+.phone__screen-light { pointer-events: none; }
+/* A device-local size, rather than viewport size, keeps the complete tagline
+   inside every phone, including the small hero and landscape devices. */
+.phone .app-logo--nirvaan { container-type: inline-size; }
+.phone .app-logo--nirvaan > img { height: auto; aspect-ratio: 398.5 / 115.1; }
+.phone .app-logo--nirvaan .app-logo__tagline {
+  width: 100%; max-width: 100%; margin-top: .18em;
+  font-size: 5.4cqi; line-height: 1.3; letter-spacing: 0;
+  white-space: normal; overflow-wrap: normal; text-align: center;
+}
+/* The circle is now the actual boundary, not an ornamental pseudo-element
+   behind a fixed-size card. Both grid children can shrink independently. */
+.convergence figure > .convergence__logo {
+  width: min(100%, 9.5rem); height: auto; aspect-ratio: 1;
+  min-width: 0; justify-self: center; overflow: hidden;
+  border: 1px solid #6353e533; border-radius: 50%;
+  container-type: inline-size; isolation: isolate;
+}
+.convergence figure > .convergence__logo::before { content: none; }
+.convergence__logo .app-logo, .convergence__logo--business img {
+  width: 80%; max-width: 80%; height: 55%; min-width: 0;
+  box-shadow: none; animation: none; padding: .25rem;
+}
+.convergence__logo .app-logo > img { min-height: 0; flex-shrink: 1; }
+.convergence__logo--nirvaan .app-logo > img { height: auto; flex: none; }
+.convergence__logo--nirvaan .app-logo__tagline {
+  max-width: 100%; font-size: 4.2cqi; letter-spacing: 0;
+  white-space: normal; line-height: 1.3; text-align: center;
+}
+.convergence figcaption { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 768px) {
+  .convergence figure { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 1rem; }
+  .convergence figcaption .registered-name { white-space: normal; }
+}
+/* Ambient sway remains, without a second rotating 3D plane inside the phone. */
+@keyframes device-sway {
+  0%, 100% { transform: translate(-4px, 0) rotate(-.6deg); }
+  50% { transform: translate(5px, -8px) rotate(.6deg); }
+}
