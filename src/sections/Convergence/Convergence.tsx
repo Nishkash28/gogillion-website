@@ -37,7 +37,7 @@ export function Convergence() {
             <span className={`convergence__logo convergence__logo--${app.theme}`}>
               <AppLogo app={app} src={app.convergenceLogo} decorative />
             </span>
-            <figcaption><a href={`/#${app.id}`}><RegisteredName name={app.name} /> · {app.launchDate} <span aria-hidden="true">↓</span></a></figcaption>
+            <figcaption><a href={`/#${app.id}`}><RegisteredName name={app.name} /> · {app.links.googlePlayUrl ? 'Live on Google Play' : app.launchDate} <span aria-hidden="true">↓</span></a></figcaption>
           </figure>
         ))}
         <figure data-convergence-logo>

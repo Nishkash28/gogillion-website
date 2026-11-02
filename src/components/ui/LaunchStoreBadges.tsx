@@ -1,4 +1,5 @@
 import type { GoGillionApp } from '../../data/apps'
+import { RegisteredName } from './RegisteredName'
 
 function AppleIcon() {
   return (
@@ -16,18 +17,34 @@ function GooglePlayIcon() {
   )
 }
 
-export function LaunchStoreBadges({ app }: { app: GoGillionApp }) {
+export function LaunchStoreBadges({ app, standalone = false }: { app: GoGillionApp; standalone?: boolean }) {
+  const playLive = /^https:\/\//.test(app.links.googlePlayUrl)
+  if (playLive) return (
+    <div className={`store-downloads${standalone ? "" : " store-downloads--compact"}`} role="group" aria-label={`${app.name} download options`}>
+      <p className="store-downloads__intro">Now live on Android. Download <RegisteredName name={app.name} /> from Google Play.</p>
+      <div className="store-downloads__options">
+        <a className="store-download store-download--live" href={app.links.googlePlayUrl}>
+          <GooglePlayIcon />
+          <span><small>LIVE NOW</small><strong>Google Play</strong><span>Download the app <span aria-hidden="true">↗</span></span></span>
+        </a>
+        <div className="store-download store-download--soon">
+          <AppleIcon />
+          <span><small>FOR iOS</small><strong>App Store</strong><span>Releasing Soon</span></span>
+        </div>
+      </div>
+    </div>
+  )
   return (
     <div className={`launch-card launch-card--${app.theme}`} role="group" aria-label={`${app.name}® launch availability`}>
       <div className="launch-card__heading">
         <span className="launch-card__status"><i aria-hidden="true" />{app.status}</span>
-        <span className="launch-card__label">Planned launch</span>
+        <span className="launch-card__label">{playLive ? 'Android available' : 'Planned launch'}</span>
       </div>
-      <p className="launch-card__date">{app.launchDate}</p>
-      <div className="launch-card__platforms" aria-label="Planned platforms">
+      <p className="launch-card__date">{playLive ? 'Download on Google Play' : app.launchDate}</p>
+      <div className="launch-card__platforms" aria-label="Platform availability">
         { /^https:\/\//.test(app.links.appStoreUrl)
           ? <a href={app.links.appStoreUrl} aria-label={`${app.name} on the App Store`}><AppleIcon />App Store</a>
-          : <span><AppleIcon />App Store</span> }
+          : <span><AppleIcon />{playLive ? 'App Store · Releasing Soon' : 'App Store'}</span> }
         { /^https:\/\//.test(app.links.googlePlayUrl)
           ? <a href={app.links.googlePlayUrl} aria-label={`${app.name} on Google Play`}><GooglePlayIcon />Google Play</a>
           : <span><GooglePlayIcon />Google Play</span> }

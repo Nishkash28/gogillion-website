@@ -43,3 +43,38 @@
   .hero__product .launch-card__status, .hero__product .launch-card__label { font-size: .48rem; }
   .hero__product .launch-card__platforms > span { font-size: .57rem; }
 }
+
+.store-downloads { margin-top: 2rem; }
+.store-downloads__intro { color: #425346; font-size: .9rem; line-height: 1.6; margin-bottom: 1rem; }
+.store-downloads__options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .85rem; }
+.store-download { display: flex; align-items: center; gap: .8rem; padding: 1.1rem; border-radius: .8rem; border: 1px solid #17223825; }
+.store-download > .store-badge__icon { width: 1.7rem; height: 2rem; flex-shrink: 0; }
+.store-download > span { display: grid; gap: .35rem; }
+.store-download small { font-size: .6rem; letter-spacing: .12em; font-weight: 650; }
+.store-download strong { font-size: 1.15rem; font-weight: 550; line-height: 1.2; }
+.store-download > span > span { font-size: .75rem; }
+.store-download--live { background: #172d26; color: #fff; border-color: #172d26; box-shadow: 0 6px 18px #172d2615; transition: background .2s, transform .2s; }
+.store-download--live small { color: #a9e5c4; }
+.store-download--live:hover { background: #244739; transform: translateY(-2px); }
+.store-download--soon { background: #ffffff65; color: #495165; }
+.launch-card__platforms { flex-wrap: wrap; }
+@media (max-width: 480px) {
+  .store-downloads__options { grid-template-columns: 1fr; }
+  .store-download { min-height: 6rem; }
+}
+
+/* The animated product panels share the store cards with a tighter footprint. */
+.store-downloads--compact { margin: 0 0 1.2rem; max-width: 28rem; }
+.store-downloads--compact .store-downloads__intro { font-size: .75rem; margin-bottom: .6rem; }
+.store-downloads--compact .store-download { padding: .75rem; gap: .55rem; }
+.store-downloads--compact .store-download strong { font-size: .95rem; }
+.store-downloads--compact .store-download > .store-badge__icon { width: 1.2rem; height: 1.4rem; }
+@media (max-width: 768px) {
+  .store-downloads--compact { margin-bottom: .8rem; }
+  .store-downloads--compact .store-downloads__options { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .4rem; }
+  .store-downloads--compact .store-download { padding: .55rem; gap: .35rem; min-height: 0; flex-wrap: wrap; }
+  .store-downloads--compact .store-downloads__intro { font-size: .62rem; line-height: 1.4; }
+  .store-downloads--compact .store-download strong { font-size: .75rem; }
+  .store-downloads--compact .store-download small { font-size: .48rem; }
+  .store-downloads--compact .store-download > span > span { font-size: .58rem; }
+}

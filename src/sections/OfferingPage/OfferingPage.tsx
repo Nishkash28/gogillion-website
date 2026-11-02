@@ -25,7 +25,7 @@ export function OfferingPage({ app }: { app?: GoGillionApp }) {
               <p className="offering-detail__positioning">{app.positioning}</p>
               <p className="offering-detail__description"><RegisteredCopy text={app.shortDescription} /></p>
               <ul className="product-copy__proof">{app.proofPoints.map((point) => <li key={point}>{point}</li>)}</ul>
-              <LaunchStoreBadges app={app} />
+              <LaunchStoreBadges app={app} standalone />
             </div>
           </section>
         ) : <BusinessOffering standalone />}

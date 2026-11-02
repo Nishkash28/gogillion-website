@@ -36,14 +36,14 @@ export const apps: readonly GoGillionApp[] = [
     positioning: 'Ancient knowledge, finally computable.',
     shortDescription:
       'Lucida structures the calculation systems and interpretive rules of Jyotish Shastra, numerology and palmistry, then uses AI reasoning to converge them into coherent, individualised guidance.',
-    status: 'Coming soon',
+    status: 'Live on Google Play',
     launchDate: 'November 2026',
     proofPoints: [
       'Classical Indian schools, structurally codified',
       'Jyotish, numerology and palmistry brought together',
       'Coherent readings through bounded AI reasoning',
     ],
-    links: { appStoreUrl: '', googlePlayUrl: '', websiteUrl: '' },
+    links: { appStoreUrl: '', googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.gogillion.lucida', websiteUrl: '' },
     ctaWording: 'Discover Lucida',
     alt: 'Lucida Celestial Alignment application logo',
     theme: 'lucida',
